@@ -363,7 +363,7 @@
 
     <script>
         // Initialize the map centered on the Atlantic (good view of visited countries)
-        var map = L.map('travel-map').setView([35, -10], 2);
+        const map = L.map('travel-map').setView([35, -10], 2);
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -371,7 +371,7 @@
         }).addTo(map);
 
         // Countries visited with approximate center coordinates
-        var visitedPlaces = [
+        const visitedPlaces = [
             { name: "Israel", lat: 31.0461, lng: 34.8516 },
             { name: "Brazil", lat: -14.2350, lng: -51.9253 },
             { name: "France", lat: 46.2276, lng: 2.2137 },
