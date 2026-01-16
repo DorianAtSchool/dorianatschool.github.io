@@ -16,6 +16,7 @@
                 <li><a href="../index.html#research">Research</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
                 <li><a href="../index.html#publications">Publications</a></li>
+                <li><button class="hiring-trigger" type="button" data-hiring-open>hiring?</button></li>
             </ul>
         </div>
     </nav>
@@ -83,5 +84,32 @@
             <p>&copy; 2026 Dorian Benhamou Goldfajn</p>
         </div>
     </footer>
+
+    <div class="hiring-modal is-hidden" data-hiring-modal aria-hidden="true">
+        <div class="hiring-dialog" role="dialog" aria-modal="true" aria-labelledby="hiring-question">
+            <button class="hiring-close" type="button" data-hiring-close aria-label="Close">x</button>
+            <p class="hiring-question" id="hiring-question" data-hiring-question>
+                Are you building things to help humans or animals?
+            </p>
+            <div class="hiring-actions" data-hiring-initial>
+                <button class="hiring-choice primary" type="button" data-hiring-yes-initial>Yes!</button>
+                <button class="hiring-choice" type="button" data-hiring-no-initial>No...</button>
+            </div>
+            <div class="hiring-response is-hidden" data-hiring-response></div>
+            <div class="hiring-actions hiring-actions--final is-hidden" data-hiring-final data-hiring-runaway-area>
+                <button class="hiring-choice primary" type="button" data-hiring-yes-final>Yes</button>
+                <button class="hiring-choice runaway" type="button" data-hiring-no-final>No</button>
+            </div>
+            <div class="hiring-contact is-hidden" data-hiring-contact>
+                <p>Reach me here:</p>
+                <p><a href="mailto:dbenhamougol@umass.edu">dbenhamougol@umass.edu</a></p>
+                <p>
+                    <a href="https://linkedin.com/in/DorianBenhamouGoldfajn" target="_blank">LinkedIn</a> ·
+                    <a href="https://github.com/DorianAtSchool" target="_blank">GitHub</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../hiring-modal.js"></script>
 </body>
 </html>
