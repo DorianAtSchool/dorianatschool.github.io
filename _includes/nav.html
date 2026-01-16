@@ -1,0 +1,14 @@
+{% assign prefix = include.prefix | default: "" %}
+<nav>
+    <div class="container">
+        <a href="{{ prefix }}index.html" class="site-name">Dorian Benhamou Goldfajn</a>
+        <ul>
+            <li><a href="{{ prefix }}index.html#about">About</a></li>
+            <li><a href="{{ prefix }}index.html#experience">Experience</a></li>
+            <li><a href="{{ prefix }}index.html#research">Research</a></li>
+            <li><a href="{{ prefix }}index.html#projects">Projects</a></li>
+            <li><a href="{{ prefix }}index.html#publications">Publications</a></li>
+            <li><button class="hiring-trigger" type="button" data-hiring-open>hiring?</button></li>
+        </ul>
+    </div>
+</nav>
