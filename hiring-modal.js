@@ -1,11 +1,4 @@
 (() => {
-    const rejectionLetters = [
-        "Thank you for your interest. After careful consideration, we are moving forward with other candidates whose experience more closely matches our needs. We appreciate your time and wish you the best.",
-        "We enjoyed learning about your work. At this time, we have decided to proceed with another applicant. Thank you again for your interest and all the best in your search.",
-        "Thank you for applying. While your background is impressive, we will not be moving forward at this time. We hope our paths cross again in the future.",
-        "We appreciate the opportunity to review your profile. We have chosen to move ahead with other candidates. Thank you again for your interest."
-    ];
-
     const confettiColors = ["#1a1a1a", "#d4c4a8", "#e8dcc8", "#f5f0e8", "#666666"];
 
     const getRandom = (min, max) => Math.random() * (max - min) + min;
@@ -78,32 +71,21 @@
 
         const closeTriggers = modal.querySelectorAll("[data-hiring-close]");
         const question = modal.querySelector("[data-hiring-question]");
-        const initialActions = modal.querySelector("[data-hiring-initial]");
         const finalActions = modal.querySelector("[data-hiring-final]");
-        const response = modal.querySelector("[data-hiring-response]");
         const contact = modal.querySelector("[data-hiring-contact]");
-        const yesInitial = modal.querySelector("[data-hiring-yes-initial]");
-        const noInitial = modal.querySelector("[data-hiring-no-initial]");
         const yesFinal = modal.querySelector("[data-hiring-yes-final]");
         const noFinal = modal.querySelector("[data-hiring-no-final]");
         const runawayArea = modal.querySelector("[data-hiring-runaway-area]");
 
         const resetModal = () => {
             if (question) {
-                question.textContent = "Are you building things to help humans or animals?";
-            }
-            if (response) {
-                response.textContent = "";
-                response.classList.add("is-hidden");
+                question.textContent = "Hire me??";
             }
             if (contact) {
                 contact.classList.add("is-hidden");
             }
-            if (initialActions) {
-                initialActions.classList.remove("is-hidden");
-            }
             if (finalActions) {
-                finalActions.classList.add("is-hidden");
+                finalActions.classList.remove("is-hidden");
             }
             if (noFinal) {
                 noFinal.style.left = "";
@@ -138,48 +120,6 @@
                 closeModal();
             }
         });
-
-        if (yesInitial) {
-            yesInitial.addEventListener("click", () => {
-                if (question) {
-                    question.textContent = "Hire me??";
-                }
-                if (initialActions) {
-                    initialActions.classList.add("is-hidden");
-                }
-                if (finalActions) {
-                    finalActions.classList.remove("is-hidden");
-                }
-                if (response) {
-                    response.classList.add("is-hidden");
-                }
-                if (contact) {
-                    contact.classList.add("is-hidden");
-                }
-            });
-        }
-
-        if (noInitial) {
-            noInitial.addEventListener("click", () => {
-                if (question) {
-                    question.textContent = "Thanks for your time.";
-                }
-                if (response) {
-                    const letter = rejectionLetters[Math.floor(Math.random() * rejectionLetters.length)];
-                    response.textContent = letter;
-                    response.classList.remove("is-hidden");
-                }
-                if (initialActions) {
-                    initialActions.classList.add("is-hidden");
-                }
-                if (finalActions) {
-                    finalActions.classList.add("is-hidden");
-                }
-                if (contact) {
-                    contact.classList.add("is-hidden");
-                }
-            });
-        }
 
         if (yesFinal) {
             yesFinal.addEventListener("click", () => {
